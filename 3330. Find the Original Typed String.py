@@ -23,42 +23,13 @@ Explanation:
 The possible strings are: "abbcccc", "abbccc", "abbcc", "abbc", and "abcccc".
 '''
 
-class Solution(object):
+class Solution:
     def possibleStringCount(self, word):
-        """
-        :type word: str
-        :rtype: int
-        """
-        rep = {}
-        letter = set()
-        possibility = 0
-        for i in word:
-            if i not in rep:
-                rep[i] = word.count(i)
-                possibility += 1
-        print(rep.values())
-        a = 0
-        for i in rep.values():
-            if(i == 1):
-                a = a+i
-            else:
-                a = a+i
-                a -= 1
-        if(a == possibility){
-            return 1
-        }
-        else {
-            return a
-        }
+        count = 0
+        for i in range(1, len(word)):
+            if word[i] == word[i - 1]:
+                count += 1
+        return count + 1
 
 A = Solution()
-A.possibleStringCount("abcd")
-
-
-# class Solution:
-#     def possibleStringCount(self, word):
-#         count = 0
-#         for i in range(1, len(word)):
-#             if word[i] == word[i - 1]:
-#                 count += 1
-#         return count + 1
+print(A.possibleStringCount("abbcccc"))
