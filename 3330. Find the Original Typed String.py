@@ -53,3 +53,12 @@ class Solution(object):
 
 A = Solution()
 A.possibleStringCount("abcd")
+
+
+# class Solution:
+#     def possibleStringCount(self, word):
+#         count = 0
+#         for i in range(1, len(word)):
+#             if word[i] == word[i - 1]:
+#                 count += 1
+#         return count + 1
