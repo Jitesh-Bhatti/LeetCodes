@@ -17,7 +17,6 @@ class Solution(object):
         total_length = len(word)
         total_ways = 0
 
-    # Step 2: Try reducing 0 to all possible reducible groups
         for reduction_count in range(0, reducible_groups + 1):
             reduced_length = total_length - reduction_count
             if reduced_length >= k:
