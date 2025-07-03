@@ -37,13 +37,12 @@ class Solution(object):
         :rtype: str
         """
         word = "a"
-        # keep growing the word until it reaches at least k characters
         while len(word) < k:
             shifted = "".join(chr((ord(c) - ord('a') + 1) % 26 + ord('a')) for c in word)
             print(shifted)
             word += shifted
         
-        return word[k - 1]  # 1-based indexing
+        return word[k - 1]
 
 
 A = Solution()
