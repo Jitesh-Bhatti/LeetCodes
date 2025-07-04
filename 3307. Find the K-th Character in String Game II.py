@@ -83,3 +83,6 @@ class Solution(object):
         # Start with 'a' and shift it 'shifts' times
         result_char = chr((ord('a') - ord('a') + shifts) % 26 + ord('a'))
         return result_char
+
+A = Solution()
+print(A.kthCharacter(10,[0,1,0,1]))
